@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node -r babel-register
 
 import {d, run} from 'lightsaber'
 import fs from 'fs'

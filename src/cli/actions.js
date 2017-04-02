@@ -2,7 +2,7 @@ import {d} from 'lightsaber'
 import config from 'commander'
 import {concat} from 'lodash'
 
-import Trust from '../core/Trust'
+import Trust from 'trust-exchange'
 
 class Actions {
   constructor() {
@@ -32,11 +32,7 @@ class Actions {
     ])
   }
 
-  // list = (val) => {
-  //   return val.split(/,\s*/)
-  // }
-
-  exec = (action) => {
+  exec(action) {
     const options = this.actions[action]
     for (const optionArgs of options) {
       config.option(...optionArgs)

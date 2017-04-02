@@ -1,39 +1,29 @@
 {
-  "name": "trust-exchange",
-  "version": "0.2.0-dev",
+  "name": "trust-exchange-cli",
+  "version": "0.0.0",
   "private": false,
-  "license": "MIT",
+  "license": "Apache 2.0",
   "author": "Harlan T Wood (https://github.com/harlantwood)",
   "contributors": [
-    "Jack Senechal (https://github.com/jacksenechal)",
-    "Noah Thorp (https://github.com/aquabu)",
-    "Manu Sporny (https://github.com/msporny)",
-    "Christopher Allen (https://github.com/ChristopherA)",
-    "Joel Dietz (https://github.com/fractastical)"
+    "Jack Senechal (https://github.com/jacksenechal)"
   ],
-  "description": "Distributed trust graph toolkit (pre-alpha)",
+  "description": "Trust Exchange command line interface",
   "scripts": {
-    "shipit": "npm-run-all --silent pre-push && git push --tags origin head",
-    "pre-push": "npm-run-all --silent lint check-clean",
+    "shipit": "yarn pre-push && git push --tags origin head",
+    "pre-push": "yarn lint && yarn readme && yarn check-clean",
     "check-clean": "if [[ $(git status --porcelain) ]]; then echo '*** Please stash or commit changes first ***\n' && exit 1; fi ",
-    "test": "mocha",
-    "testv": "mocha --full-trace",
-    "lint": "yarn run lint:ci -- --fix",
+    "lint": "yarn lint:ci -- --fix",
     "lint:ci": "eslint --ignore-pattern '!.eslintrc.js' .eslintrc.js test src util 'bin/*'",
-    "readme": "node -r babel-register util/updateReadme.js"
+    "readme": "util/updateReadme.js"
   },
-  "main": "src/index.coffee",
   "bin": {
     "trust": "bin/trust"
   },
   "dependencies": {
-    "bitcore-lib": "^0.13.19",
     "commander": "^2.9.0",
-    "json-stable-stringify": "^1.0.1",
-    "jsonld-signatures": "github:CoMakery/jsonld-signatures#latest-jsonld-lib",
     "lightsaber": "^0.6.8",
     "lodash": "^4.17.4",
-    "moment": "^2.17.1"
+    "trust-exchange": "https://github.com/trust-exchange/js-trust-exchange-core.git"
   },
   "devDependencies": {
     "babel-core": "6.23.1",
@@ -46,17 +36,16 @@
     "chai-as-promised": "^6.0.0",
     "eslint": "^3.16.1",
     "eslint-config-comakery": "^0.0.4",
-    "mocha": "^3.2.0",
-    "npm-run-all": "^4.0.2"
+    "mocha": "^3.2.0"
   },
   "engines": {
     "node": ">=4"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/CoMakery/trust-exchange.git"
+    "url": "https://github.com/trust-exchange/js-trust-exchange-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/CoMakery/trust-exchange/issues"
+    "url": "https://github.com/trust-exchange/js-trust-exchange-cli/issues"
   }
 }
