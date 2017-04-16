@@ -2,7 +2,7 @@ import {d} from 'lightsaber'
 import config from 'commander'
 import {concat} from 'lodash'
 
-import Trust from 'trust-exchange'
+import Trust from 'trustgraph'
 
 class Actions {
   constructor() {

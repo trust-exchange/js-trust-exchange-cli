@@ -1,13 +1,13 @@
 {
-  "name": "trust-exchange-cli",
+  "name": "trustgraph-cli",
   "version": "0.0.0",
   "private": false,
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "author": "Harlan T Wood (https://github.com/harlantwood)",
   "contributors": [
     "Jack Senechal (https://github.com/jacksenechal)"
   ],
-  "description": "Trust Exchange command line interface",
+  "description": "Trust Graph command line interface",
   "scripts": {
     "shipit": "yarn pre-push && git push --tags origin head",
     "pre-push": "yarn lint && yarn readme && yarn check-clean",
@@ -23,7 +23,7 @@
     "commander": "^2.9.0",
     "lightsaber": "^0.6.8",
     "lodash": "^4.17.4",
-    "trust-exchange": "^0.3.2"
+    "trustgraph": "^0.3.3"
   },
   "devDependencies": {
     "babel-core": "6.24.0",
@@ -43,9 +43,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/trust-exchange/js-trust-exchange-cli.git"
+    "url": "https://github.com/trustgraph/js-trustgraph-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/trust-exchange/js-trust-exchange-cli/issues"
+    "url": "https://github.com/trustgraph/js-trustgraph-cli/issues"
   }
 }
